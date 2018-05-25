@@ -1,3 +1,4 @@
+# O(log2n)
 def binary_search(array, value, low, high):
     mid = (low + high) // 2
     if value == array[mid]:
