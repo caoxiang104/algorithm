@@ -21,7 +21,10 @@ class Queue(object):
 
     def __str__(self):
         super(Queue, self).__str__()
-        return str(self.queue)
+        if self.tail >= self.head:
+            return str(self.queue[self.head:self.tail])
+        else:
+            return str(self.queue[0:self.tail] + self.queue[self.head:self.limit])
 
     def enqueue(self, value):
         '''push an element in the rear of the queue'''
@@ -82,7 +85,7 @@ def main():
     queue.dequeue()
     print("After dequeue, elements in queue is:" + str(queue))
     queue.rotate(5)
-    print("After rotate one time, elements in queue is:" + str(queue))
+    print("After rotate five time, elements in queue is:" + str(queue))
     print("Queue is empty?" + str(queue.is_empty()))
     print("Size of queue is:" + str(queue.size()))
     queue.clear()
