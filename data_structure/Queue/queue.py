@@ -67,7 +67,7 @@ class Queue(object):
             self.enqueue(temp)
 
     def front(self):
-        return self.queue[0]
+        return self.queue[self.head]
 
 
 class QueueOverflowError(BaseException):

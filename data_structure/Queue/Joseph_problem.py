@@ -4,7 +4,7 @@ from data_structure.Queue.queue import Queue
 
 def joseph_problem(name_list, k):
     # 约瑟夫问题：每次第k个人死
-    queue = Queue()
+    queue = Queue(len(name_list))
     for i in name_list:
         queue.enqueue(i)
     while queue.size() != 1:
